@@ -1,0 +1,44 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 2,
+  "name": "Cisco Umbrella Chromebook client (Ext)",
+  "version": "1.3.4",
+  "version_name": "v1.3.4",
+  "description": "Cisco Umbrella Chromebook client protects users by blocking malicious requests and helps admins to filter in-appropriate domains.",
+  "icons": {
+    "16": "images/ucc-16.png",
+    "128": "images/ucc-128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/ucc-19-bw.png"
+    },
+    "default_title": "Umbrella Chromebook client"
+  },
+  "default_locale": "en_US",
+  "background": {
+    "scripts": [
+      "idInfo.js",
+      "utils.js",
+      "logger.js",
+      "cache.js",
+      "config.js",
+      "background.js"
+    ]
+  },
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+  "incognito": "split",
+  "permissions": [
+    "webRequest",
+    "alarms",
+    "storage",
+    "webRequestBlocking",
+    "enterprise.deviceAttributes",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "web_accessible_resources": [
+    "blocked.html"
+  ]
+}
